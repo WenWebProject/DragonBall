@@ -1,0 +1,169 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url('tenkaichi-budokai.jpg');
+    background-size: cover;
+    background-position: top center; /* Align the top of the image with the top of the viewport */
+    background-repeat: no-repeat;
+    position: relative; /* Ensure body acts as a container for positioned elements */
+    z-index: 1; /* Lowest z-index for the background image */
+}   
+
+header {
+    background-color: rgba(255, 204, 0, 0.8); /* Semi-transparent background */
+    padding: 20px;
+    text-align: center;
+    color: darkred; /* Change this to your desired color */
+}
+
+h1 {
+    margin: 0;
+    color: inherit; /* Inherit the color from the header */
+}
+
+main {
+    padding: 20px;
+    text-align: center;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.9), rgba(254, 254, 254, 0.5)); /* Gradient background */
+    position: relative; /* Ensure main content is above the SVG */
+    height: 100vh; /* Ensure the main element takes up the full viewport height */
+    box-sizing: border-box; /* Include padding in the height calculation */
+    z-index: 15; /* Higher z-index to ensure buttons are clickable */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+
+
+/* Animation for KidGoku */
+#KidGoku {
+    position: absolute; /* Changed to absolute for better control during animation */
+    width: 150px;
+    height: auto; /* Ensure proper scaling */
+    z-index: 21; /* Keep above the SVG path(z=10) and the main(z=15) */
+    transform: translate(-50%, -50%); /* Center the image on the path */
+    
+}
+
+
+svg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10; /* Ensure the SVG is above the background */
+    
+}
+
+@keyframes surf {
+    0% { transform: translate(-50%, -50%) translateY(0) rotate(10deg); }
+    50% { transform: translate(-50%, -50%) translateY(-20px) rotate(10deg); }
+    100% { transform: translate(-50%, -50%) translateY(0) rotate(20deg); }
+}
+
+
+/* Styles for the talk bubble */
+.talk-bubble {
+    position: absolute;
+    bottom: 110%; /* Position above Kid Goku */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: lightblue; /* Change this to your desired color */
+    border: 2px solid blue; /* Change this to your desired color */
+    border-radius: 20px; /* Rounded corners for cloud shape */
+    padding: 10px;
+    width: 150px; 
+    max-height: 100%; /* Flexible height */
+    text-align: center;
+    z-index: 23; /* Ensure the talk bubble is above Kid Goku */
+    
+}
+
+/* Styles for the talk bubble tail*/
+.talk-bubble::after {
+    content: '';
+    position: absolute;
+    bottom: -20px; /* Position the tail */
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 20px 10px 0; /* Tail size */
+    border-style: solid;
+    border-color: lightblue transparent transparent transparent; /* Change this to match the bubble color */
+    z-index: 22; /* Ensure the tail is below the bubble */
+}
+
+/* KidGoku when antwort richtig */
+#AntR-container {
+    position: absolute;
+    z-index: 20; /* Keep above the SVG path */
+    top: 300px;
+    left: 950px;
+    transform: translate(-50%, -50%); /* Center the container */
+    max-height: 100%; /* Flexible height */
+}
+
+#AntR {
+    width: 200px;
+    height: auto; /* Ensure proper scaling */
+    z-index: 21;
+}
+
+/* XiaoLin when antwort falsch */
+#AntF-container {
+    position: absolute;
+    z-index: 20; /* Keep above the SVG path */
+    top: 350px;
+    left: 300px;
+    transform: translate(-50%, -50%); /* Center the container */
+    max-height: 100%; /* Flexible height */
+    
+}
+
+#AntF {
+    width: 100px;
+    height: auto; /* Ensure proper scaling */
+    z-index: 21;
+}
+
+#Ball-container {
+    position: absolute;
+    z-index: 20; /* Keep above the SVG path */
+    top: 400px;
+    left: 500px;
+    transform: translate(-50%, -50%); /* Center the container */
+    max-height: 100%; /* Flexible height */
+    max-width: 250px; 
+}
+
+.Ball {
+    width: 50px;
+    height: auto; /* Ensure proper scaling */
+    z-index: 21;
+}
+
+
+
+
+/* Container for Platzer and the talk bubble */
+#KidGokuTalk {
+    position: absolute;
+    z-index: 15; /* Keep above the SVG path */
+    left: 630px; /* Position at the specified point */
+    top: 400px; /* Position at the specified point */
+    transform: translate(-50%, -50%); /* Center the container */
+    }
+
+#Platzer {
+    width: 50px;
+    height: auto; /* Ensure proper scaling */
+    opacity:0;
+    z-index: 15;
+}
+
+
